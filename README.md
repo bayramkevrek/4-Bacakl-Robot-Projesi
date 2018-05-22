@@ -1,1 +1,9 @@
-# 4-Bacakl-Robot-Projesi
+##### 4 Bacaklı Robot Projesi #####
+
+# BAYRAM KEVREK #
+# UMUT MUSTAFA ÇUBUKCUOĞLU #
+# MUSTAFA TAŞTAN #
+# VOLKAN BİLGİLİ #
+# KAHRAMAN TAŞTAN #
+
+NİĞDE 2018
