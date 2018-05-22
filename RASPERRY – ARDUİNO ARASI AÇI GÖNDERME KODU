@@ -1,0 +1,60 @@
+RASPERRY – ARDUİNO ARASI AÇI GÖNDERME KODU
+#include <Servo.h>
+
+Servo myservomotor[12];
+
+int serialIntIndex = 0;
+int serialIntData[14] = {0};
+int serialDataAvailable = false;
+int j;
+int pinlist[12] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+
+void setup() {
+  for (j = 0; j < 12; j++)
+  {
+    myservomotor[j].write(0);
+  }
+  for (j = 0; j < 12; j++)
+  {
+    myservomotor[j].attach(pinlist[j]);
+  }
+  Serial.begin(9600);
+}
+void loop() {
+  while (Serial.available() > 0)  //Seri port bufferında bilgi varmı
+  {
+    serialIntData[serialIntIndex] = Serial.parseInt();//varsa bufferdan bir byte al
+    Serial.print(serialIntIndex);
+    Serial.print(" ");
+    Serial.println(serialIntData[serialIntIndex]);
+    if (serialIntData[0] != 200)
+    {
+      serialIntIndex = 0;
+    }
+    else
+    {
+      if (++serialIntIndex == 14 ) {    //hem \n hemde \r gönderildiyse bu koşul sağlanır
+        serialIntIndex = 0;
+        if (serialIntData[13] == 300)
+        {
+          serialDataAvailable = 1;
+          break;
+        }
+      }
+    }
+  }
+
+  if (serialDataAvailable) {
+    serialDataAvailable = 0;
+    for (j = 0; j < 12; j++)
+    {
+      myservomotor[j].write(serialIntData[j + 1]);
+    }
+    for (j = 0; j < 14; j++)
+    {
+      Serial.print(j);
+      Serial.print(" ");
+      Serial.println(serialIntData[j]);
+    }
+  }
+}
