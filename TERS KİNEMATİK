@@ -1,0 +1,40 @@
+TERS KİNEMATİK
+syms l1 l2 l3 l4 d1 teta1 teta2 teta3
+syms nx ny nz ox oy oz ax ay az px py pz;
+
+B0=[nx ox ax px;ny oy ay py;nz oz az pz;0 0 0 1]
+
+
+A1=[cos(teta1) 0 sin(teta1) l1*cos(teta1); ...
+
+sin(teta1) 0 -cos(teta1) l1*sin(teta1); ...
+
+0 1 0 d1; ...
+
+0 0 0 1];
+
+ A2=[cos(teta2) -sin(teta2) 0 l2*cos(teta2); ...
+
+sin(teta2) cos(teta2) 0 l2*sin(teta2); ...
+
+0 0 1 0; ...
+
+0 0 0 1];
+
+ A3=[cos(teta3) -sin(teta3) 0 l3*cos(teta3); ...
+
+sin(teta3) cos(teta3) 0 l3*sin(teta3); ...
+
+0 0 1 0; ...
+
+0 0 0 1];
+
+
+T0=A1*A2*A3
+
+T1=simplify(A2*A3)
+B1=simplify(inv(A1)*B0)
+
+
+T2=simplify(A3)
+B2=simplify(inv(A2)*inv(A1)*B0)
