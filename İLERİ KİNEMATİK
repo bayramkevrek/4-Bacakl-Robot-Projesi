@@ -1,0 +1,39 @@
+İLERİ KİNEMATİK
+
+syms l1 l2 l3 d1 teta1 teta2 teta3
+
+ l1=27.66;l2=82;l3=130;d1=13
+   teta1=deg2rad(20);
+   teta2=deg2rad(44);
+   teta3=deg2rad(18);
+
+A1=[cos(teta1) 0 sin(teta1) l1*cos(teta1); ...
+
+sin(teta1) 0 -cos(teta1) l1*sin(teta1); ...
+
+0 1 0 d1; ...
+
+0 0 0 1];
+
+ A2=[cos(teta2) -sin(teta2) 0 l2*cos(teta2); ...
+
+sin(teta2) cos(teta2) 0 l2*sin(teta2); ...
+
+0 0 1 0; ...
+
+0 0 0 1];
+
+ A3=[cos(teta3) -sin(teta3) 0 l3*cos(teta3); ...
+
+sin(teta3) cos(teta3) 0 l3*sin(teta3); ...
+
+0 0 1 0; ...
+
+0 0 0 1];
+
+
+T0=A1*A2*A3
+
+px=T0(1,4)
+py=T0(2,4)
+pz=T0(3,4)
