@@ -1,0 +1,70 @@
+MOTOR SENKRONİZASYONU DENEMESİ
+#include <Servo.h>
+
+Servo myservomotor1;
+Servo myservomotor2;
+Servo myservomotor3;
+Servo myservomotor4;
+Servo myservomotor5;
+Servo myservomotor6;
+Servo myservomotor7;
+Servo myservomotor8;
+Servo myservomotor9;
+Servo myservomotor10;
+Servo myservomotor11;
+Servo myservomotor12;
+
+int derece = 0;
+
+void setup()
+{
+  myservomotor1.attach(2);  // arduinonun 2. pinini çıkış yaptık.
+  myservomotor2.attach(3);  // arduinonun 3. pinini çıkış yaptık.
+  myservomotor3.attach(4);  // arduinonun 4. pinini çıkış yaptık.
+  myservomotor4.attach(5);  // arduinonun 5. pinini çıkış yaptık.
+  myservomotor5.attach(6);  // arduinonun 6. pinini çıkış yaptık.
+  myservomotor6.attach(44);  // arduinonun 7. pinini çıkış yaptık.
+  myservomotor7.attach(8);  // arduinonun 8. pinini çıkış yaptık.
+  myservomotor8.attach(9);  // arduinonun 9. pinini çıkış yaptık.
+  myservomotor9.attach(10);  // arduinonun 10. pinini çıkış yaptık.
+  myservomotor10.attach(11);  // arduinonun 11. pinini çıkış yaptık.
+  myservomotor11.attach(12);  // arduinonun 12. pinini çıkış yaptık.
+  myservomotor12.attach(46);  // arduinonun 13. pinini çıkış yaptık.
+}
+
+void loop()
+{
+  for (derece = 0; derece <= 180; derece += 1)
+  {
+    myservomotor1.write(derece);
+    myservomotor2.write(derece);
+    myservomotor3.write(derece);
+    myservomotor4.write(derece);
+    myservomotor5.write(derece);
+    myservomotor6.write(derece);
+    myservomotor7.write(derece);
+    myservomotor8.write(derece);
+    myservomotor9.write(derece);
+    myservomotor10.write(derece);
+    myservomotor11.write(derece);
+    myservomotor12.write(derece);
+
+    delay(20);
+  }
+  for (derece = 180; derece >= 0; derece -= 1)
+  {
+    myservomotor1.write(derece);
+    myservomotor2.write(derece);
+    myservomotor3.write(derece);
+    myservomotor4.write(derece);
+    myservomotor5.write(derece);
+    myservomotor6.write(derece);
+    myservomotor7.write(derece);
+    myservomotor8.write(derece);
+    myservomotor9.write(derece);
+    myservomotor10.write(derece);
+    myservomotor11.write(derece);
+    myservomotor12.write(derece);
+    delay(20);
+  }
+}
