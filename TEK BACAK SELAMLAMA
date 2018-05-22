@@ -1,0 +1,46 @@
+TEK BACAK SELAMLAMA
+#include<Servo.h>
+Servo servo1;
+Servo servo2;
+Servo servo3;
+Servo servo4;
+Servo servo5;
+Servo servo6;
+Servo servo7;
+Servo servo8;
+Servo servo9;
+Servo servo10;
+Servo servo11;
+Servo servo12;
+
+void setup() {
+  servo1.attach(2);
+  servo2.attach(3);
+  servo3.attach(4);
+  servo4.attach(5);
+  servo5.attach(6);
+  servo6.attach(7);
+  servo7.attach(8);
+  servo8.attach(9);
+  servo9.attach(10);
+  servo10.attach(11);
+  servo11.attach(12);
+  servo12.attach(13);
+}
+void loop() {
+  // ref:sol taraflar 0 ları 180 sağ taraflar 0
+  servo1.write(0);   //sağ ön1
+  servo2.write(0);   //sağ ön2
+  servo3.write(0);   //sağ ön3
+servo7.write(120);  //sağ arka1
+servo8.write(0);  //sağ arka2
+  servo9.write(0);  //sağ arka3
+  servo4.write(120);   //sol ön3
+  servo5.write(180);   //sol ön2
+ servo6.write(180);   //sol ön1
+  servo10.write(50);  //sol arka3
+  servo11.write(180);  //ssol arka2
+  servo12.write(180);   //sol arka1
+  delay(1000); 
+  servo7.write(50);  //sağ arka1
+  delay(1000);
