@@ -1,0 +1,19 @@
+AÇILARIN BULUNMASI
+syms l1 l2 l3 d1
+d1=13;l1=27.66;l2=82;l3=130;
+px=138.7711;py=50.5086;pz=184.7452;
+tet1=atan2(py,px);
+teta1=rad2deg(tet1)
+
+a=px*cos(tet1)+py*sin(tet1)-l1;
+b=pz-d1;
+k=((a^2+b^2-l3^2-l2^2)/(2*l2*l3));
+
+tet3=atan2(sqrt(1-k^2),k);
+teta3=rad2deg(tet3)
+
+j=((l3^2-b^2-a^2-l2^2)/(-2*l2));
+
+tet2=atan2(b,a)+atan2(-sqrt(a^2+b^2-j^2),j);
+teta2=rad2deg(tet2)
+
